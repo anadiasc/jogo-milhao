@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form th:fragment="perguntas" th:each="pergunta : ${perguntas}">
+        <div class="card-body">
+            <h5 class="card-title" th:text="'Pergunta ' + ${pergunta.id} + ': ' + ${pergunta.pergunta}"></h5>
+
+            <div th:text="${pergunta.alternativa[0].texto}"></div>
+            <div th:text="${pergunta.alternativa[1].texto}"></div>
+            <div th:text="${pergunta.alternativa[2].texto}"></div>
+            <div th:text="${pergunta.alternativa[3].texto}"></div>
+
+
+            <div class="card-footer text-center">
+                <button class="btn btn-primary">Responder</button>
+            </div>
+
+        </div>
+    </form>
+
+    <!--
+    <form >
+        <div class="card-body" th:each="pergunta : ${perguntas}">
+            <h5 class="card-title" th:text="'Pergunta ' + ${#numbers.sequence(perguntas.indexOf(pergunta) + 1)} + ': ' + ${pergunta.pergunta}"></h5>
+            <div class="list-group">
+                <button class="list-group-item list-group-item-action"
+                        th:each="alternativa : ${pergunta.alternativas}"
+                        th:text="${alternativa.alternativa + ') ' + alternativa.texto}">
+                </button>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-primary">Responder</button>
+        </div>
+    </form>
+
+     <div th:each="alternativa : ${pergunta.alternativas}"
+                     th:text="${alternativa.alternativa} + ') ' + ${alternativa.texto}">
+
+                </div>
+    -->
+
+</body>
+</html>

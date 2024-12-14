@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JOGO DO MILHÃO</title>
+    <!-- Link do Bootstrap 4 (CDN) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #2e445f;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 500px;
+        }
+        .btn-primary {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center">Bem-vindo ao Jogo do Milhão!</h2>
+        <p class="text-center text-muted">Informe seu nickname para começar o jogo</p>
+
+        <!-- Capturar Nickname -->
+        <form th:action="@{/jogo}" method="get">
+            <div class="form-group">
+                <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Digite seu nickname" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar o Jogo</button>
+        </form>
+    </div>
+</div>
+
+<!-- Scripts do Bootstrap (CDN) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
